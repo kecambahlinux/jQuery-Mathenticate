@@ -1,0 +1,20 @@
+{
+  "name": "jquery-mathenticate",
+  "title": "jQuery Mathenticate",
+  "description": "jQuery plugin for creating simple math based form authentication",
+  "version": "0.1.0",
+  "homepage": "https://github.com/stevenwadejr/jquery-mathenticate",
+  "author": {
+    "name": "Steven Wade",
+    "url": "http://stevenwade.name"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stevenwadejr/jquery-mathenticate.git"
+  },
+  "bugs": "https://github.com/stevenwadejr/jquery-mathenticate/issues",
+  "dependencies": {
+    "grunt": "0.3.x",
+    "grunt-yui-compressor": "0.2.x"
+  }
+}
