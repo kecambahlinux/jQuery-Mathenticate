@@ -2,7 +2,7 @@
   "name": "jquery-mathenticate",
   "title": "jQuery Mathenticate",
   "description": "jQuery plugin for creating simple math based form authentication",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/stevenwadejr/jquery-mathenticate",
   "author": {
     "name": "Steven Wade",

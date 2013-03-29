@@ -3,7 +3,6 @@ module.exports = function( grunt ) {
 
 "use strict";
 
-
 grunt.initConfig({
 	pkg: "<json:package.json>",
 
@@ -20,14 +19,14 @@ grunt.initConfig({
 	
 	concat: {
 		dist: {
-			src: ['<banner>', 'jquery.mathenticate.js'],
+			src: ['<banner>', 'src/jquery.mathenticate.js'],
 			dest: 'jquery.mathenticate.js'
 		}
 	},
 
 	min: {
     dist: {
-    	src: ['<banner:meta.minified>', 'jquery.mathenticate.js'],
+    	src: ['<banner:meta.minified>', 'src/jquery.mathenticate.js'],
       dest: 'jquery.mathenticate.min.js'
     }
   }

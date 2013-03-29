@@ -1,11 +1,3 @@
-/* 
- * jQuery Mathenticate - v0.2.0 
- * https://github.com/stevenwadejr/jquery-mathenticate 
- * 
- * @author Steven Wade 
- * http://stevenwade.name 
- */
-
 ;(function($, window, document, undefined){
 
 	// Create the defaults once
