@@ -63,6 +63,15 @@ Added in v0.2.1, Mathenticate can be integrated with the [jQuery Validation plug
 	
 ## Mathenticate Properties
 
+###`attrs`
+
+Pass any key:value pairs that you want to be attributes for the mathenticate element.
+
+	attrs: {
+		class: 'text input',
+		id: 'mathenticate-box'
+	}
+
 ###`bounds`
 
 Upper and lower bounds for the equation constants to be randomly chosen from. By default 2 numbers will be randomly chosen between 1 and 10.
@@ -82,3 +91,7 @@ Insert auth box `before` or `after` the `insertWhere` element. Default is `befor
 Math operation to generate (ie: `add`, `subtract`, `multiply`, or `divide`). Also accepts any of the following: `+ - * / plus minus`.
 
 You can also choose `random` in with Mathenticate will choose an operator randomly at initialization.
+
+###`validate`
+
+Set to `true` to use with the jQuery Validate plugin. Default is `false`.
