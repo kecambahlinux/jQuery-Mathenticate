@@ -1,5 +1,5 @@
 /* 
- * jQuery Mathenticate - v0.2.0 
+ * jQuery Mathenticate - v0.2.1 
  * https://github.com/stevenwadejr/jquery-mathenticate 
  * 
  * @author Steven Wade 
@@ -17,7 +17,8 @@
 				bounds: [1, 10],
 				insertWhere: 'submit',
 				insertHow: 'before',
-				operator: '+'
+				operator: '+',
+				validate: false
 			},
 			_answer,
 			_constants = {
@@ -52,10 +53,11 @@
 			_createBox(this);
 			this.generate();
 			_insertBox(this);
+			_validate(this);
 			
 			var self = this;
 			this.$element.on('submit', function(e){
-				if( self.$auth.val() != _answer )
+				if( ! self.isValid() )
 				{
 					e.preventDefault();
 					return false;
@@ -113,6 +115,11 @@
       
       _constants.first = first;
       _constants.second = second;
+		},
+		
+		isValid: function()
+		{
+			return parseInt(this.$auth.val()) === _answer;
 		}
 		
 	};
@@ -147,6 +154,16 @@
 			default :
 				self.$auth.insertBefore($el);
 				break;
+		}
+	};
+	
+	_validate = function(self)
+	{
+		if( self.options.validate && $.validator !== undefined )
+		{
+			$.validator.addMethod('mathenticate', function(value, element, params){
+				return self.isValid();
+			}, 'Please solve for the equation.');
 		}
 	};
 	

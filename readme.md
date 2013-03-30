@@ -8,11 +8,11 @@ Math based validation is more logical and easier to read than image based CAPTCH
 
 Mathenticate requires no setup although it does provide some customization. Once initialized, Mathenticate will generate a random equation, create an authorization box, insert the authorization box into the form, and listen for a submit event to test the answer provided against the generated answer. 
 
-**Current Version - 0.1.0**
+**Current Version - 0.2.1**
 
-3K full  
-1.5K min  
-746 bytes min + gzipped
+3.6K full  
+1.8K min  
+892 bytes min + gzipped
 
 ## Example Use
 
@@ -26,6 +26,40 @@ or
 	  	insertHow: 'before',
 		operator: 'add'
 	});
+
+## jQuery Validation
+
+Added in v0.2.1, Mathenticate can be integrated with the [jQuery Validation plugin](http://bassistance.de/jquery-plugins/jquery-plugin-validation/).
+
+### Example Validation
+
+	<form id="form">
+  		<input type="text" name="first_name" placeholder="First Name" class="required" /> <br>
+  		<input type="text" name="last_name" placeholder="Last Name" class="required" /> <br>
+  	
+  		<br>
+  		<div class="auth" style="border: 1px solid red; display: inline-block;"></div>
+  		<input type="submit" name="submit" />
+  	</form>
+  	
+&nbsp;
+
+	$('#form')
+		.mathenticate({
+			bounds: [2, 8],
+			insertWhere: '.auth',
+			insertHow: 'into',
+			operator: 'add',
+			validate: true
+		})
+		.validate({
+			rules: {
+				mathenticate: {
+		  			required: true,
+		  			mathenticate: true
+				}
+			}
+		});
 	
 ## Mathenticate Properties
 
